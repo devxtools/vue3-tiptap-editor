@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ESNext",
+    "module": "ESNext",
+    "declaration": true,
+    "declarationDir": "dist/types",
+    "outDir": "dist",
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "jsx": "preserve",
+    // "types": ["vite/client", "node", "vue"],
+    "paths": {
+      "@/*": ["src/*"],
+      "vue3-tiptap-editor": ["../src"]
+    }
+  },
+  "include": ["src/*", "types/index.d.ts"],
+  // "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.vue"]
+}

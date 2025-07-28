@@ -1,0 +1,125 @@
+:root {
+    --t-editor-tools-icon-size: 16px;
+}
+.-t-v-editor-toolbar-container {
+    width: 100%;
+    border-top-left-radius: var(--t-editor-rounded);
+    border-top-right-radius: var(--t-editor-rounded);
+    overflow-x: auto;
+    padding: var(--t-editor-tools-padding);
+    border-bottom: solid 1px var(--t-editor-border-color);
+    overscroll-behavior-x: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    @apply bg-white xl:sticky xl:top-0 z-[10];
+}
+
+html,
+body {
+    overscroll-behavior: contain;
+}
+
+.-t-v-editor-toolbar {
+    width: max-content;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.-t-v-editor-toolbar .button {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 10px;
+    display: inline-block;
+    position: relative;
+    caret-color: transparent;
+}
+
+.-t-v-editor-toolbar .button:not([disabled]):hover {
+    background: var(--t-editor-tools-hover-color);
+}
+
+.-t-v-editor-toolbar .button[disabled] {
+    cursor: not-allowed;
+    opacity: 0.16;
+}
+
+.-t-v-editor-toolbar .button .icon {
+    width: var(--t-editor-tools-icon-size);
+    height: var(--t-editor-tools-icon-size);
+    color: var(--t-editor-tools-icon-color);
+}
+
+.-t-v-editor-toolbar .tools-bar-icon {
+    cursor: pointer;
+}
+
+.-t-v-editor-toolbar .t-v-solid {
+    width: 1px;
+    position: relative;
+}
+.-t-v-editor-toolbar .t-v-solid::before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0;
+    bottom: 0;
+    background-color: var(--t-editor-tools-hover-color);
+}
+
+.-t-v-editor-toolbar .is-active {
+    @apply bg-[var(--t-editor-tools-hover-color)] text-[var(--t-editor-primary-color)];
+}
+
+.color-item {
+    @apply p-[5px] hover:bg-[var(--t-editor-tools-hover-color)];
+}
+
+.color {
+    @apply w-[18px] h-[18px] bg-[var(--t-color)] p-0 rounded-full;
+}
+.clear-color{
+    @apply relative;
+}
+.clear-color::before{
+    content: "";
+    @apply w-[1px] h-full bg-gray-300 absolute left-[50%] top-0 rotate-45 translate-x-[-50%];
+}
+input[type="color"] {
+    @apply w-[18px] h-[18px] border-0 p-0 rounded-full overflow-hidden cursor-pointer appearance-none;
+}
+
+.-t-v-editor-toolbar .is-active {
+    @apply bg-[var(--t-editor-tools-hover-color)] text-[var(--t-editor-primary-color)] 
+    bg-[var(--t-editor-tools-hover-color)];
+}
+
+.input-link {
+    @apply outline-0 border-1 border-[var(--color-gray-200)] px-[10px] py-[3px] rounded-[var(--t-editor-rounded)];
+}
+
+.link-item {
+    @apply p-0 select-none;
+}
+
+.t-v-return-icon,
+.t-v-blank-icon,
+.t-v-del-icon {
+    @apply w-[18px] h-[18px] active:text-[var(--t-editor-primary-color)];
+}
+
+/* H5 */
+.-t-v-editor-wrapper {
+    @apply border-0 xl:border-[1px] xl:border-[var(--t-editor-border-color)] rounded-[var(--t-editor-rounded)] pb-[var(--t-v-editor-wrapper-pb)];
+}
+
+.-t-v-editor-h5-wrapper .-t-v-editor-toolbar-container {
+    will-change: transform, opacity;
+    transition: opacity 10ms ease;
+    border-top: solid 1px var(--t-editor-border-color);
+    @apply absolute z-[100] top-full left-0 right-0 rounded-tl-none rounded-tr-none border-b-0 bg-white;
+}

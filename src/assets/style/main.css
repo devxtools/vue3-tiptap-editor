@@ -1,0 +1,69 @@
+@import "tailwindcss";
+:root {
+    /* 主色 */
+    --t-editor-primary-color: #009240;
+    --t-editor-primary-active-color: #009240;
+    --t-editor-primary-sub-color: #fff;
+    /* 描边色 */
+    --t-editor-border-color: #eeeeee;
+    /* 文本色 */
+    --t-editor-default-text-color: #ededed;
+    /* 图标默认色 */
+    --t-editor-tools-icon-color: #333;
+    /* 图标高亮色 */
+    --t-editor-tools-icon-active-color: #000000;
+    /* hover bg color */
+    --t-editor-tools-hover-color: #f2f2f2;
+    /* rounded */
+    --t-editor-rounded: 10px;
+    /* ? */
+    --t-editor-content-width: 750px;
+    --t-linear-gradient-color: linear-gradient(to right,red 0%,orange 25%,yellow 50%,green 75%,blue 100%);
+
+    --t-editor-content-code-bg-color: rgba(15, 22, 36, 0.05);
+    --t-editor-content-code-text-color: rgba(35, 37, 42, 0.87);
+    --t-editor-content-code-border-color: rgba(37, 39, 45, 0.1);
+    --t-editor-content-selection-color: #ededed;
+
+    --t-editor-uploader-image-aspect: 16/9;
+    --t-editor-uploader-progress-bg-color: #f9f9f9;
+    --t-editor-uploader-progress-border-color: #eaeaea;
+    --t-editor-uploader-progress-active-color: var(--t-editor-primary-color);
+
+    --t-editor-tools-padding: 10px;
+
+    --t-v-editor-toolbar-h: 48px;
+    --t-v-editor-wrapper-pb: 128px;
+    --t-v-safe-area-bottom: env(safe-area-inset-bottom, 0px);
+
+    /*
+    | 环境变量                     | 描述               |
+    | ------------------------ | ---------------- |
+    | `safe-area-inset-top`    | 顶部安全区域（如刘海）      |
+    | `safe-area-inset-bottom` | 底部安全区域（如横条）      |
+    | `safe-area-inset-left`   | 左侧安全区（如 iPad 横屏） |
+    | `safe-area-inset-right`  | 右侧安全区            |
+    */
+}
+
+/* 基础样式 */
+.-t-v-editor-button-active {
+    @apply outline-[3px] outline-[var(--t-editor-primary-color)]/0;
+}
+
+.-t-v-editor-button-active:active {
+    @apply outline-[3px] outline-[var(--t-editor-primary-color)]/20;
+}
+
+@import './tools-bar.css';
+@import './editor.css';
+@import './uploader.css';
+@import './Popup.css';
+
+/* 
+sm: '640px', // ≥640px
+md: '768px', // ≥768px
+lg: '1024px', // ≥1024px
+xl: '1280px', // ≥1280px
+'2xl': '1536px' // ≥1536px 
+*/

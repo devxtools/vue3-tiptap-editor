@@ -1,0 +1,155 @@
+.uploader-wrap {
+    @apply relative;
+}
+
+.uploader-card {
+    @apply flex flex-col justify-center rounded-[var(--t-editor-rounded)] relative border-dashed border-[1px] border-gray-300;
+}
+
+.uploader-card.image-video-card {
+    @apply aspect-[var(--t-editor-uploader-image-aspect)]
+}
+
+.uploader-card.audio-card,
+.uploader-card.file-card {
+    @apply px-[15px] py-[15px]
+}
+
+.uploader-card.file-card .file {
+    @apply pr-[20px]
+}
+
+.uploader-card.file-card .file-inner {
+    @apply flex items-center gap-[15px];
+}
+
+.uploader-card.file-card .file-relename {
+    @apply text-[var(--t-editor-primary-color)] cursor-pointer w-[90%];
+    word-wrap: break-word;
+    white-space: normal;
+    /* 最常用写法：适配中英文 */
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.uploader-card.file-card .file-type {
+    @apply flex items-center relative;
+}
+
+.uploader-card.file-card .file-format {
+    @apply absolute left-0 top-[50%] text-[12px] translate-y-[-50%] text-red-500;
+}
+
+.uploader-card.file-card .format-icon {
+    @apply w-[36px] h-[36px] text-[var(--t-editor-primary-color)];
+}
+
+.uploader-card:active {
+    @apply border-[var(--t-editor-primary-color)];
+}
+
+.uploader-card .progress-bar {
+    @apply w-full rounded-[10px] border-[1px] relative;
+    background: var(--t-editor-uploader-progress-bg-color);
+    border-color: var(--t-editor-uploader-progress-border-color);
+}
+
+.uploader-error {
+    @apply text-center bg-black/50 rounded-[var(--t-editor-rounded)];
+}
+
+.progress-block,
+.uploader-error {
+    @apply w-full h-full flex flex-col justify-center absolute left-0 top-0 z-[2] p-4;
+}
+
+.progress-info {
+    @apply flex items-center gap-3 text-[var(--t-editor-primary-color)] py-4;
+}
+
+.uploader-card .progress-bar::after {
+    content: "";
+    @apply absolute bottom-[-4px] left-[2px] right-[2px] h-[4px] bg-black blur-lg;
+}
+
+.uploader-card .progress {
+    @apply bg-[var(--t-editor-primary-color)] h-[10px] rounded-[10px] transition-all;
+}
+
+.uploader-entra {
+    @apply w-full h-full absolute left-0 top-0 z-[2] flex items-center justify-center cursor-pointer bg-[#fbfbfb] rounded-[var(--t-editor-rounded)];
+}
+
+.uploader-entra .icon {
+    @apply w-[48px] h-[48px] text-gray-300 m-auto;
+}
+
+.uploader-error .icon {
+    @apply w-[48px] h-[48px] text-red-500 mx-auto pb-4;
+}
+
+.uploader-entra .tip {
+    @apply text-center py-[20px] text-gray-300 text-sm;
+}
+
+.uploader-entra .iframe-url {
+    @apply xl:w-[70%] outline-0 px-[15px] py-[5px] rounded-[var(--t-editor-rounded)] border-dashed border-[1px] border-gray-300 active:border-[var(--t-editor-primary-color)];
+    @apply w-full;
+}
+
+.uploader-entra .entra-inner,
+.uploader-entra.iframe-entra .entra-inner {
+    @apply xl:flex xl:flex-col items-center justify-center;
+}
+.uploader-entra.iframe-entra .entra-inner {
+    @apply w-full flex-row gap-[15px] px-[15px];
+}
+.uploader-entra .entra-inner .button-row {
+    @apply flex gap-[10px] items-center justify-center pt-[15px] xl:pt-0;
+}
+.uploader-entra.iframe-entra {
+    @apply flex-col;
+}
+
+.audio-file-entra .icon {
+    @apply w-[28px] h-[28px] text-gray-300;
+}
+
+.audio-file-entra .tip {
+    @apply p-[0px] pt-[10px];
+}
+
+.input-file {
+    @apply w-full absolute left-0 top-0 opacity-0 z-[1];
+}
+
+.image-wrappe,
+.video-wrappe {
+    @apply relative w-full pb-[56.25%] overflow-hidden rounded-[var(--t-editor-rounded)];
+}
+
+.image-wrappe .image,
+.video-wrappe .video,
+.iframe-video {
+    @apply m-0 rounded-[var(--t-editor-rounded)] shadow-none absolute top-0 left-0 w-full h-full;
+}
+
+.image-wrappe .image {
+    @apply object-cover;
+}
+
+.video-wrappe .video {
+    @apply bg-black object-contain;
+}
+
+.uploader-close-icon {
+    @apply w-[20px] h-[20px] absolute right-[10px] top-[10px] z-[3] text-red-200 cursor-pointer;
+}
+
+.uploader-del-image {
+    @apply absolute top-0 left-0 z-[3] bg-red-600/20 p-[10px] cursor-pointer rounded-br-[20px] rounded-tl-[calc(var(--t-editor-rounded)-1px)];
+}
+
+.uploader-wrap {
+    padding-bottom: 20px;
+}

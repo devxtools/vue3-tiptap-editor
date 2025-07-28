@@ -1,0 +1,78 @@
+{
+  "name": "vue3-tiptap-editor",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js"
+    },
+    "./editor.css": {
+      "default": "./dist/index.css"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "vite build && vite dev example",
+    "watch": "tsx scripts/watch-build.ts",
+    "dev:watch": "concurrently \"npm:dev\" \"npm:watch\"  \"npm:build\"",
+    "check-ts": "npx tsc --noEmit",
+    "deploy": "npm publish --registry=https://registry.npmjs.org/",
+    "remove": "npm unpublish --registry=https://registry.npmjs.org/ vue3-tiptap-editor@版本号"
+  },
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "autoprefixer": "^10.4.21",
+    "chokidar": "^4.0.3",
+    "concurrently": "^9.2.0",
+    "postcss": "^8.5.6",
+    "sass": "^1.89.2",
+    "tailwindcss": "^4.1.11",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3",
+    "vite": "^7.0.5",
+    "vite-svg-loader": "^5.1.0"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "@tailwindcss/vite": "^4.1.11",
+    "@tiptap/core": "^3.0.7",
+    "@tiptap/extension-bubble-menu": "^3.0.7",
+    "@tiptap/extension-color": "^3.0.7",
+    "@tiptap/extension-floating-menu": "^3.0.7",
+    "@tiptap/extension-highlight": "^3.0.7",
+    "@tiptap/extension-image": "^3.0.7",
+    "@tiptap/extension-link": "^3.0.7",
+    "@tiptap/extension-list-item": "^3.0.7",
+    "@tiptap/extension-subscript": "^3.0.7",
+    "@tiptap/extension-superscript": "^3.0.7",
+    "@tiptap/extension-task-item": "^3.0.7",
+    "@tiptap/extension-task-list": "^3.0.7",
+    "@tiptap/extension-text-align": "^3.0.7",
+    "@tiptap/extension-text-style": "^3.0.7",
+    "@tiptap/extension-underline": "^3.0.7",
+    "@tiptap/pm": "^3.0.7",
+    "@tiptap/starter-kit": "^3.0.7",
+    "@tiptap/vue-3": "^3.0.7",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vueuse/core": "^13.5.0",
+    "vue": "^3.5.18",
+    "vue3-tiptap-editor": "link:"
+  },
+  "keywords": [
+    "vue-tiptap-editor",
+    "vue3-tiptap-editor",
+    "Tiptap",
+    "富文本编辑器",
+    "富文本"
+  ],
+  "workspaces": [
+    "./example"
+  ],
+  "packageManager": "pnpm@10.8.1+sha512.c50088ba998c67b8ca8c99df8a5e02fd2ae2e2b29aaf238feaa9e124248d3f48f9fb6db2424949ff901cffbb5e0f0cc1ad6aedb602cd29450751d11c35023677"
+}

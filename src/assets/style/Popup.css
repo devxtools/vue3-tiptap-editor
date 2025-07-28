@@ -1,0 +1,25 @@
+@import "tailwindcss";
+.-t-v-popup-panel {
+    @apply fixed left-0 top-0 z-[12];
+}
+
+.-t-v-content,
+.-t-v-h-content {
+    @apply shadow-xl rounded-[10px] py-[5px] border border-gray-200 px-[5px] min-w-[120px] max-w-[620px] max-h-[380px] overflow-y-scroll gap-1
+}
+
+.-t-v-content {
+    @apply flex flex-col;
+}
+
+.-t-v-h-content {
+    @apply flex flex-wrap;
+}
+
+.select-item {
+    @apply text-[14px] text-gray-700 px-[10px] py-1 rounded-[10px] cursor-pointer flex items-center;
+}
+
+.-t-v-popup-panel-h5 {
+    @apply absolute;
+}
