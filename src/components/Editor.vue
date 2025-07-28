@@ -19,7 +19,7 @@
         <slot name="toolsAfter"></slot>
       </template>
     </ToolsBar>
-    <EditorContent class="-t-v-tiptap-editor" :editor="editor"/>
+    <EditorContent class="-t-v-tiptap-editor" :editor="editor" />
     <slot name="end"></slot>
   </div>
 </template>
@@ -50,6 +50,11 @@ const props = withDefaults(defineProps<Props>(), {
     'alignRight', 'alignJustify', 'subscript', 'superscript'
   ]
 })
+
+
+const editorHtml = defineModel('html');
+const editorJson = defineModel('json', { type: Object, default: ()=> { return { type: 'doc', content:[] } } });
+
 const slots = useSlots();
 const ToolsBarRef = ref();
 
@@ -60,16 +65,14 @@ provide('desktop', isDesktop); // 提供给所有子组件
 provide('popupOffsetTop', offsetBottom); // 提供给所有子组件
 provide('isScrolling', isScrolling); // 提供给所有子组件
 
-function getStats() {
-    let chars = 0, words = 0
-    editor.value?.state.doc.descendants((node: { isText: any; text?: string }) => {
-        if (node.isText) {
-            chars += node.text?.length ?? 0;
-            words += (node.text?.match(/\S+/g) ?? []).length;
-        }
-    })
-    return { chars, words }
+function updateData() {
+  editorJson.value = editor.value?.getJSON();
+  editorHtml.value = editor.value?.getHTML();
 }
+
+editor.value?.on('update', ()=> {
+  updateData();
+})
 
 defineExpose({
   editor,
@@ -82,6 +85,5 @@ defineExpose({
   getJSON() {
     return editor.value?.getJSON()
   },
-  getStats
 })
 </script>

@@ -10,8 +10,22 @@ export function useMods(editor: Editor) {
             command(attrs).run()
         }
     }
+
+    function charsWords() {
+        if (!editor) return;
+        let chars = 0, words = 0
+        editor?.state.doc.descendants((node: { isText: any; text?: string }) => {
+            if (node.isText) {
+                chars += node.text?.length ?? 0;
+                words += (node.text?.match(/\S+/g) ?? []).length;
+            }
+        })
+        return { chars, words }
+    }
+
     return {
-        toggleOption,
+        charsWords,
+        toggleOption
     }
 }
 

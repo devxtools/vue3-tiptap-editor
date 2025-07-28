@@ -24,6 +24,7 @@ const popupOffsetTop = inject<Ref<number>>('popupOffsetTop');
 //     })
 // }
 const popupPanelHeight = ref(0);
+const popupPanelWidth = ref(0);
 
 watch(() => props.rect, async (newRect) => {
     await nextTick();
@@ -31,6 +32,8 @@ watch(() => props.rect, async (newRect) => {
     const el = popupPanelRef.value?.$el || popupPanelRef.value;
     if (el && newRect) {
         const height = el.offsetHeight;
+        const width = el.offsetHeight;
+        popupPanelWidth.value = width;
         popupPanelHeight.value = height; // 或根据 el 的高度调整
     }
 }, { immediate: true });
@@ -46,7 +49,7 @@ const computedStyle = computed(()=> {
         }
         let style = {
             top: `${_top}px`,
-            left: `${newRect.left + newRect.width / 2}px`,
+            left: `${(newRect.left + newRect.width / 2) - (popupPanelWidth.value/2)}px`,
             zIndex: props.zIndex,
         };
         return style;

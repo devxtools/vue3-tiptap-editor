@@ -8,7 +8,7 @@ type Props = {
 
 export function usePopups({ slots, referenceRef }: Props) {
     let container = document.createElement('div');
-    container.classList.add('vue-tiptap-editor-dropdown-panel');
+    container.classList.add('--v-t-editor-dropdown-panel');
     document.body.appendChild(container);
     const isMount = ref(false);
     const visible = ref(false);

@@ -1,4 +1,4 @@
-# vue-tiptap-editor
+# vue3-tiptap-editor
 
 基于 [👉 Tiptap](https://tiptap.dev/docs/resources/whats-new) + Vue3 集成基础功能并保留扩展空间的Vue3富文本编辑器组件
 
@@ -12,11 +12,17 @@
 + 内置上传模块，视频、图像、音频、各种文件，与外部视频链接
 + 可自定义配主题我，主要css变量定义，可用root去做变量复盖
 
+installation
+```text
+npm i vue3-tiptap-editor
+pnpm add vue3-tiptap-editor
+```
+
 ```js
 // xxx.vue
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { VueEditor } from 'vue-tiptap-editor';
+import { VueEditor } from 'vue3-tiptap-editor';
 import '@/assets/style/editor.css';
 import '@/assets/style/tools-bar.css';
 // import YouPlugin from 'YouPlugin';
@@ -54,10 +60,10 @@ const EditorOptions = ref({
     </div>
 </template>
 ```
-
+<!-- 
 ![PC示例](./src/assets/images/pc.gif)
 
 
 ![H5示例](./src/assets/images/h5.gif)
-
+ -->
 

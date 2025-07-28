@@ -33,6 +33,7 @@ const EditorOptions = ref({
 <!-- 响应式场景 -->
 <template>
     <div class="xl:p-[100px]">
+        
         <VueEditor :options="EditorOptions"></VueEditor>
     </div>
 </template>
