@@ -204,6 +204,9 @@
         background-color: var(--t-editor-content-selection-color);
     }
 }
+.-editor-content {
+    @apply relative z-[2];
+}
 
 /*
 .-t-v-editor-wrapper {

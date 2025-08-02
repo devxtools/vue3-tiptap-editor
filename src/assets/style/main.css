@@ -1,8 +1,8 @@
 @import "tailwindcss";
 :root {
     /* 主色 */
-    --t-editor-primary-color: #009240;
-    --t-editor-primary-active-color: #009240;
+    --t-editor-primary-color: #000728;
+    --t-editor-primary-active-color: var(--t-editor-primary-color);
     --t-editor-primary-sub-color: #fff;
     /* 描边色 */
     --t-editor-border-color: #eeeeee;

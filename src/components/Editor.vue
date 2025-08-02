@@ -19,13 +19,15 @@
         <slot name="toolsAfter"></slot>
       </template>
     </ToolsBar>
-    <EditorContent class="-t-v-tiptap-editor" :editor="editor" />
+    <div class="-t-v-tiptap-editor">
+      <EditorContent class="-editor-content" :editor="editor" />
+    </div>
     <slot name="end"></slot>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, provide, ref, useSlots, nextTick, computed } from 'vue';
+import { onMounted, provide, ref, useSlots, nextTick, computed, watch } from 'vue';
 import { EditorContent, JSONContent } from '@tiptap/vue-3';
 import ToolsBar from '@/components/ToolsBar/index.vue';
 import { useEditor } from '@/composables/useEditor';
@@ -33,12 +35,12 @@ import { useToolbarFollowKeyboard } from '@/composables/useToolbarFollowKeyboard
 type Props = {
   options?: Record<string, any>;
   screen?: string;
-  toolsbar?: string[]
+  toolsbar?: string[];
+  placeholder?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   options: ()=> ({}),
-  screen: 'xl',
   toolsbar: ()=> [
     'solid',
     'undo', 'redo', 
@@ -48,16 +50,16 @@ const props = withDefaults(defineProps<Props>(), {
     'bold', 'italic', 'strike', 'code', 'underline',
     'fontBgColor', 'fontColor', 'Link', 'UploaderFiles', 'alignLeft', 'alignCenter',
     'alignRight', 'alignJustify', 'subscript', 'superscript'
-  ]
+  ],
+  screen: 'xl',
+  placeholder: '👉 Tiptap + Vue3 integrates basic functions of the rich text editor, you can happily edit...'
 })
-
 
 const editorHtml = defineModel('html');
 const editorJson = defineModel('json', { type: Object, default: ()=> { return { type: 'doc', content:[] } } });
 
-const slots = useSlots();
+// const slots = useSlots();
 const ToolsBarRef = ref();
-
 const { editor } = useEditor(props.options);
 const { offsetBottom, maxScrollY, keyboardHeight, isDesktop, isScrolling } = useToolbarFollowKeyboard(ToolsBarRef, props.screen);
 provide('editor', editor); // 提供给所有子组件
@@ -70,15 +72,25 @@ function updateData() {
   editorHtml.value = editor.value?.getHTML();
 }
 
+function setContent(htmlJson: string|JSONContent) {
+  editor.value?.commands.setContent(htmlJson);
+}
+
 editor.value?.on('update', ()=> {
   updateData();
 })
 
+onMounted(()=>{
+  if (editorJson.value && editorJson.value.content?.length) {
+    setContent(editorJson.value);
+  } else if(editorHtml.value) {
+    setContent(editorHtml.value);
+  }
+})
+
 defineExpose({
   editor,
-  setContent(html: string|JSONContent) {
-    editor.value?.commands.setContent(html)
-  },
+  setContent,
   getHTML() {
     return editor.value?.getHTML()
   },

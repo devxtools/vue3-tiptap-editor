@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { VueEditor } from 'vue3-tiptap-editor';
-import '../../dist/index.css';
+import { VueEditor } from './src/index';
+import './src/assets/style/main.css';
 // import YouPlugin from 'YouPlugin';
 
 const editorContent = ref(`

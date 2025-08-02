@@ -5,7 +5,7 @@ import Popup from '@/components/Popups/index.vue';
 import PopupItem from '@/components/Popups/Item.vue';
 import type { Editor } from '@tiptap/vue-3';
 import useMods from '@/composables/useMods';
-import { EnumAccept } from '@/components/uploader/type';
+import { EnumAccept } from '@/components/Uploader/type';
 
 type Props = {
 }
