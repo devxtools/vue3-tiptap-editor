@@ -17,9 +17,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "test": "vite build && vite dev example",
-    "watch": "tsx scripts/watch-build.ts",
-    "dev:watch": "concurrently \"npm:dev\" \"npm:watch\"  \"npm:build\"",
     "check-ts": "npx tsc --noEmit",
     "deploy": "npm publish --registry=https://registry.npmjs.org/",
     "remove": "npm unpublish --registry=https://registry.npmjs.org/ vue3-tiptap-editor@1.0.1"
