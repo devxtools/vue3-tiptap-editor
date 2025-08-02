@@ -22,7 +22,7 @@
     "dev:watch": "concurrently \"npm:dev\" \"npm:watch\"  \"npm:build\"",
     "check-ts": "npx tsc --noEmit",
     "deploy": "npm publish --registry=https://registry.npmjs.org/",
-    "remove": "npm unpublish --registry=https://registry.npmjs.org/ vue3-tiptap-editor@版本号"
+    "remove": "npm unpublish --registry=https://registry.npmjs.org/ vue3-tiptap-editor@1.0.0"
   },
   "devDependencies": {
     "@types/node": "^24.1.0",
@@ -61,8 +61,28 @@
     "@tiptap/vue-3": "^3.0.7",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vueuse/core": "^13.5.0",
-    "vue": "^3.5.18",
-    "vue3-tiptap-editor": "link:"
+    "vue": "^3.5.18"
+  },
+  "peerDependencies": {
+    "@tiptap/core": "^3.0.7",
+    "@tiptap/extension-bubble-menu": "^3.0.7",
+    "@tiptap/extension-color": "^3.0.7",
+    "@tiptap/extension-floating-menu": "^3.0.7",
+    "@tiptap/extension-highlight": "^3.0.7",
+    "@tiptap/extension-image": "^3.0.7",
+    "@tiptap/extension-link": "^3.0.7",
+    "@tiptap/extension-list-item": "^3.0.7",
+    "@tiptap/extension-subscript": "^3.0.7",
+    "@tiptap/extension-superscript": "^3.0.7",
+    "@tiptap/extension-task-item": "^3.0.7",
+    "@tiptap/extension-task-list": "^3.0.7",
+    "@tiptap/extension-text-align": "^3.0.7",
+    "@tiptap/extension-text-style": "^3.0.7",
+    "@tiptap/extension-underline": "^3.0.7",
+    "@tiptap/pm": "^3.0.7",
+    "@tiptap/starter-kit": "^3.0.7",
+    "@tiptap/vue-3": "^3.0.7",
+    "@vueuse/core": "^13.5.0"
   },
   "keywords": [
     "vue-tiptap-editor",
