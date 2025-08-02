@@ -1,16 +1,16 @@
 # vue3-tiptap-editor
+A Vue 3 rich text editor component based on [👉 Tiptap](https://tiptap.dev/docs/resources/whats-new), with built-in core features and full extensibility.
 
-基于 [👉 Tiptap](https://tiptap.dev/docs/resources/whats-new) + Vue3 集成基础功能并保留扩展空间的Vue3富文本编辑器组件
-
-📚 [👉 English Documentation](/README.md)
+📚 [👉 中文文档](/README.md)
 
 ```text
-因项目需要但官网并没有给出开箱即用的Vue3组件版，所以封装一个为了项目能开箱即用！
+Due to project requirements and the lack of an out-of-the-box Vue 3 component from the official Tiptap site, this wrapper was created to provide a ready-to-use solution for our project.
 ```
 
-+ ✅ 支持响应式
-+ 内置上传模块，视频、图像、音频、各种文件，与外部视频链接
-+ 可自定义配主题我，主要css变量定义，可用root去做变量复盖
+
+✅ Supports reactivity
++ Built-in upload module for videos, images, audio, and various files, including support for external video links
++ Theme customization supported via CSS variables—easily overridden using :root
 
 installation
 ```text
@@ -35,14 +35,14 @@ const EditorOptions = ref({
     uploaderHooks:{
         action: 'Your interface',
         formDataHook(FormData, ctx) {
-            // 通过FormData自行配置你要的参数
+            // Configure the parameters you want through FormData
         },
-        exceedSize(file) { // 例如：大于10MB，
+        exceedSize(file) { // For example: greater than 10MB,
             const MAX_SIZE = 1000 * 1024 * 1024; // 1000MB
             const bool = file.size > MAX_SIZE;
             if (bool) {
-                // 你可以在这放你的Toast, Message 这类的
-                console.log('最大上传文件为1000MB');
+                // You can put your Toast, Message, etc. here
+                console.log('The maximum upload file size is 1000MB');
             }
             return bool;
         },
@@ -53,17 +53,10 @@ const EditorOptions = ref({
 })
 
 </script>
-<!-- 响应式场景 -->
+<!-- Responsive scenes -->
 <template>
     <div class="xl:p-[100px]">
         <VueEditor :options="EditorOptions"></VueEditor>
     </div>
 </template>
 ```
-<!-- 
-![PC示例](./src/assets/images/pc.gif)
-
-
-![H5示例](./src/assets/images/h5.gif)
- -->
-

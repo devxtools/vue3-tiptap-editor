@@ -1,6 +1,6 @@
 {
   "name": "vue3-tiptap-editor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
@@ -22,7 +22,7 @@
     "dev:watch": "concurrently \"npm:dev\" \"npm:watch\"  \"npm:build\"",
     "check-ts": "npx tsc --noEmit",
     "deploy": "npm publish --registry=https://registry.npmjs.org/",
-    "remove": "npm unpublish --registry=https://registry.npmjs.org/ vue3-tiptap-editor@1.0.0"
+    "remove": "npm unpublish --registry=https://registry.npmjs.org/ vue3-tiptap-editor@1.0.1"
   },
   "devDependencies": {
     "@types/node": "^24.1.0",
