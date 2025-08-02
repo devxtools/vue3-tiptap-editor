@@ -19,7 +19,7 @@
     "build": "vite build",
     "check-ts": "npx tsc --noEmit",
     "deploy": "npm publish --registry=https://registry.npmjs.org/",
-    "remove": "npm unpublish --registry=https://registry.npmjs.org/ vue3-tiptap-editor@1.0.1"
+    "remove": "npm unpublish --registry=https://registry.npmjs.org/ vue3-tiptap-editor@1.0.2"
   },
   "devDependencies": {
     "@types/node": "^24.1.0",
