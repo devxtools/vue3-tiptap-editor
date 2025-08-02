@@ -2,5 +2,7 @@
 index.html merge=ours
 main.js merge=ours
 App.vue merge=ours
+example/* merge=ours
 example/** merge=ours
+scripts/* merge=ours
 scripts/** merge=ours
