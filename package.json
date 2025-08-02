@@ -13,11 +13,15 @@
     },
     "./package.json": "./package.json"
   },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "types": "dist/types/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "test": "vite build && vite dev example",
+    "test": "vite dev example",
     "watch": "tsx scripts/watch-build.ts",
     "dev:watch": "concurrently \"npm:dev\" \"npm:watch\"  \"npm:build\"",
     "check-ts": "npx tsc --noEmit",
@@ -61,7 +65,8 @@
     "@tiptap/vue-3": "^3.0.7",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vueuse/core": "^13.5.0",
-    "vue": "^3.5.18"
+    "vue": "^3.5.18",
+    "vue3-tiptap-editor": "^1.0.3"
   },
   "peerDependencies": {
     "@tiptap/core": "^3.0.7",
