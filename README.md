@@ -33,7 +33,7 @@ const EditorOptions = ref({
         // YouPlugin,
     ],
     uploaderHooks:{
-        action: 'http://trapi1.toychats.com/upload/upload_chunked',
+        action: 'Your interface',
         formDataHook(FormData, ctx) {
             // 通过FormData自行配置你要的参数
         },
