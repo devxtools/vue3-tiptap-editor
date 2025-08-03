@@ -48,10 +48,11 @@
 
 /* 基础样式 */
 .-t-v-editor-button-active {
-    @apply outline-[3px] outline-[var(--t-editor-primary-color)]/0;
+    @apply flex items-center bg-[var(--t-editor-primary-color)] rounded-[var(--t-editor-rounded)] py-[10px] px-[20px] cursor-pointer
+    outline-[3px] outline-[var(--t-editor-primary-color)]/0 border-none hover:border-[transparent];
 }
 
-.-t-v-editor-button-active:active {
+.-t-v-editor-button-active:active,.-t-v-editor-button-active:focus {
     @apply outline-[3px] outline-[var(--t-editor-primary-color)]/20;
 }
 

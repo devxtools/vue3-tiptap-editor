@@ -205,7 +205,7 @@
     }
 }
 .-editor-content {
-    @apply relative z-[2];
+    @apply text-left relative z-[2];
 }
 
 /*
