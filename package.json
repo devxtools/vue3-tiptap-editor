@@ -61,7 +61,7 @@
     "@vitejs/plugin-vue": "^6.0.0",
     "@vueuse/core": "^13.5.0",
     "vue": "^3.5.18",
-    "vue3-tiptap-editor": "link:"
+    "vue3-tiptap-editor": "0.0.1"
   },
   "peerDependencies": {
     "@tiptap/core": "^3.0.7",
