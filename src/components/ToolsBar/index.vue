@@ -14,8 +14,7 @@ type Props = {
 }
 const props = defineProps<Props>();
 const editor = inject<Ref<Editor>>('editor');
-const { toggleOption } = useMods(editor?.value as Editor);
-
+const { toggleOption } = useMods(editor as Ref<Editor>);
 const isUndo = computed(()=> !editor?.value?.can().undo());
 const isRedo = computed(()=> !editor?.value?.can().redo());
 const isBlockquote = computed(()=> editor?.value?.isActive('blockquote'));

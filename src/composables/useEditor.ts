@@ -17,7 +17,7 @@ import { Editor, type JSONContent } from '@tiptap/vue-3';
 
 import useUploader from '@/components/Uploader/plugin';
 import FontColorPlugin from '@/components/FontColor/plugin';
-
+const Vue3Editor = ref<Editor>();
 export function useEditor(options?: any, placeholder?: string) {
     if (!options) options = {};
     const editor = ref<Editor>(); // 每次调用都是新的
@@ -56,12 +56,18 @@ export function useEditor(options?: any, placeholder?: string) {
     }, options);
     
     editor.value = new Editor(options); // 假设你用 Tiptap 等创建编辑器实例
-   
+    Vue3Editor.value = editor.value;
     onBeforeUnmount(() => {
         editor.value?.destroy();
+        Vue3Editor.value?.destroy();
+        Vue3Editor.value = null;
     });
 
     return {
         editor
     };
+}
+
+export {
+    Vue3Editor
 }

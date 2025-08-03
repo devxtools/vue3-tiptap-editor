@@ -19,7 +19,7 @@ const isTaskList = computed(()=> editor?.value.isActive('taskList'))
 
 const isList = computed(()=> isBulletList.value || isOrderedList.value || isTaskList.value);
     
-const { toggleOption } = useMods(editor?.value as Editor);
+const { toggleOption } = useMods(editor as Ref<Editor>);
 
 function clickListItem({ value }: { value: string }) {
     toggleOption(value);

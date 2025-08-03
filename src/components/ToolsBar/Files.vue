@@ -4,7 +4,6 @@ import SvgIcon from '@/components/SvgIcon.vue';
 import Popup from '@/components/Popups/index.vue';
 import PopupItem from '@/components/Popups/Item.vue';
 import type { Editor } from '@tiptap/vue-3';
-import useMods from '@/composables/useMods';
 import { EnumAccept } from '@/components/Uploader/type';
 
 type Props = {
@@ -22,8 +21,6 @@ const isFile = computed(()=> editor?.value.isActive('file'))
 
 const isMediaList = computed(()=> isVideo.value || isVideo.value || isVideo.value);
     
-const { toggleOption } = useMods(editor?.value as Editor);
-
 type PopupItemOptions = {
     [key:string]: ()=> void
 }

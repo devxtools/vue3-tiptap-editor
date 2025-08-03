@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const editor = inject<Ref<Editor>>('editor');
-const { toggleOption } = useMods(editor?.value as Editor);
+const { toggleOption } = useMods(editor as Ref<Editor>);
 
 const link = ref();
 const buttonRef = ref();

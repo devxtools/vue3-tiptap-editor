@@ -1,9 +1,11 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { VueEditor } from 'vue3-tiptap-editor';
+import { VueEditor, Vue3Editor, useMods } from 'vue3-tiptap-editor';
 import 'vue3-tiptap-editor/editor.css';
 // import YouPlugin from 'YouPlugin';
 
+// const { } = useMods();
+console.log(Vue3Editor, 'Vue3Editor=')
 const editorContent = ref(`
     <h1>H1</h1>
     <h2>H2</h2>

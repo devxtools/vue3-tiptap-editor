@@ -34,7 +34,7 @@ const isFontColor = computed(()=> editor?.value.isActive('fontColor'));
 
 const isActive = computed(()=> props.isFont? isFontColor.value: isHighlight.value);
     
-const { toggleOption } = useMods(editor?.value as Editor);
+const { toggleOption } = useMods(editor as Ref<Editor>);
 
 
 editor?.value.on('selectionUpdate', ({ editor }) => {

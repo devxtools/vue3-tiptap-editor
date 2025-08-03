@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, provide, ref, useSlots, nextTick, computed, watch } from 'vue';
+import { onMounted, provide, ref } from 'vue';
 import { EditorContent, JSONContent } from '@tiptap/vue-3';
 import ToolsBar from '@/components/ToolsBar/index.vue';
 import { useEditor } from '@/composables/useEditor';
