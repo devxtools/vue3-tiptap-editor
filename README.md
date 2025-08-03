@@ -1,7 +1,7 @@
 # vue3-tiptap-editor
 A Vue 3 rich text editor component based on [👉 Tiptap](https://tiptap.dev/docs/resources/whats-new), with built-in core features and full extensibility.
 
-📚 [👉 中文文档](/README.md)
+📚 [👉 中文文档](/README.cn.md)
 
 ```text
 Due to project requirements and the lack of an out-of-the-box Vue 3 component from the official Tiptap site, this wrapper was created to provide a ready-to-use solution for our project.
