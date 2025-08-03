@@ -2,20 +2,18 @@
   "name": "vue3-tiptap-editor",
   "version": "1.0.2",
   "type": "module",
-  "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
+  "style": "dist/index.css",
   "exports": {
     ".": {
       "import": "./dist/index.es.js"
-    },
-    "./editor.css": {
-      "default": "./dist/index.css"
     },
     "./package.json": "./package.json"
   },
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "README.cn.md"
   ],
   "types": "dist/types/index.d.ts",
   "scripts": {
@@ -66,7 +64,7 @@
     "@vitejs/plugin-vue": "^6.0.0",
     "@vueuse/core": "^13.5.0",
     "vue": "^3.5.18",
-    "vue3-tiptap-editor": "^1.0.3"
+    "vue3-tiptap-editor": "link:"
   },
   "peerDependencies": {
     "@tiptap/core": "^3.0.7",
