@@ -167,21 +167,13 @@ onBeforeUnmount(()=> {
                         <input class="iframe-url" v-model="fileUrl" :placeholder="props.tip" @keydown.enter="confirmIframeUrl" />
                         <div class="button-row">
                             <button 
-                                class="
-                                    -t-v-editor-button-active
-                                    flex items-center bg-[var(--t-editor-primary-color)] rounded-[var(--t-editor-rounded)] 
-                                    py-[10px] px-[20px] cursor-pointer
-                                "
+                                class="-t-v-editor-button-active"
                                 @click="confirmIframeUrl"
                             >
                                 <SvgIcon class="w-[20px] h-[20px] text-[var(--t-editor-primary-sub-color)]" name="return" />
                             </button>
                             <button 
-                                class="
-                                    -t-v-editor-button-active
-                                    flex items-center bg-[var(--t-editor-primary-color)] rounded-[var(--t-editor-rounded)] 
-                                    py-[10px] px-[20px] cursor-pointer
-                                "
+                                class="-t-v-editor-button-active"
                                 @click="confirmIframeUrl"
                             >
                                 <SvgIcon class="w-[20px] h-[20px] text-[var(--t-editor-primary-sub-color)]" name="transfer" />

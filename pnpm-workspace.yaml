@@ -4,4 +4,4 @@ ignoredBuiltDependencies:
   - esbuild
 
 overrides:
-  vue3-tiptap-editor: link:../../Library/pnpm/global/5/node_modules/vue3-tiptap-editor
+  vue3-tiptap-editor: 'link:'

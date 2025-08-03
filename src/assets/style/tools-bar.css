@@ -35,6 +35,9 @@ body {
     display: inline-block;
     position: relative;
     caret-color: transparent;
+    background-color: transparent;
+    border: none;
+    outline: none;
 }
 
 .-t-v-editor-toolbar .button:not([disabled]):hover {

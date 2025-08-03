@@ -42,7 +42,6 @@ type Props = {
 const props = withDefaults(defineProps<Props>(), {
   options: ()=> ({}),
   toolsbar: ()=> [
-    'solid',
     'undo', 'redo', 
     'solid',
     'Heading','List','blockquote','codeBlock',

@@ -60,3 +60,5 @@ const EditorOptions = ref({
     </div>
 </template>
 ```
+
+##### Documentation is still in progress...
