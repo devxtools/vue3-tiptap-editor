@@ -1,6 +1,6 @@
 {
   "name": "vue3-tiptap-editor",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "type": "module",
   "module": "dist/index.es.js",
   "style": "dist/index.css",
