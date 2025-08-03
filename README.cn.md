@@ -61,4 +61,30 @@ const EditorOptions = ref({
 </template>
 ```
 
-##### 文档还在编写中...
+
+## options 参数说明
+| 参数名   | 类型     | 默认值   | 描述                       |
+|----------|----------|----------|----------------------------|
+| `extensions`  | `Array` | `'[]'`     | 插件扩展。可参考 [Tiptap 自定义扩展文档](https://tiptap.dev/docs/editor/extensions/custom-extensions/create-new) |
+| `uploaderHooks`  | `Object` | `'uploaderHooks'`     | 上传文件相关的钩子函数集合，用于扩展上传行为（如校验、预处理、自定义上传等） |
+
+## uploaderHooks 参数说明
+| 参数名   | 类型     | 默认值   | 描述                       |
+|----------|----------|----------|----------------------------|
+| `action`  | `string` | `'null'`     | 上传文件的接口地址 |
+| `formDataHook`  | `Function(FormData, data)` | `-`     | 可自定义提交参数 |
+| `exceedSize`  | `Function(file)` | `-`     | 判断文件大小，返回true则继续上传，false拦截并停止上传 |
+| `filelink`  | `Function(res)` | `res.data.filelink、res.data.url、res.data.fileurl、res.data`     | 上传成功后返回访问文件的地址给filelink |
+
+
+## useEditors
+```js
+import { useEditors } from 'vue3-tiptap-editor';
+const { charsWords } = useEditors();
+const editorCharsWords = computed(()=> charsWords());
+```
+
+| 参数名   | 类型     | 默认值   | 描述                       |
+|----------|----------|----------|----------------------------|
+| `charsWords`  | `Function` | `-`     | 读取编辑器内的字符长度、单词长度 |
+

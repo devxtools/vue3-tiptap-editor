@@ -61,19 +61,19 @@ const EditorOptions = ref({
 </template>
 ```
 
-## options 参数说明
-| 参数名   | 类型     | 默认值   | 描述                       |
-|----------|----------|----------|----------------------------|
-| `extensions`  | `Array` | `'[]'`     | 插件扩展。可参考 [Tiptap 自定义扩展文档](https://tiptap.dev/docs/editor/extensions/custom-extensions/create-new) |
-| `uploaderHooks`  | `Object` | `'uploaderHooks'`     | 上传文件相关的钩子函数集合，用于扩展上传行为（如校验、预处理、自定义上传等） |
+## options
+| Parameter       | Type     | Default           | Description                                                                                                                                 |
+| --------------- | -------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| `extensions`    | `Array`  | `[]`              | Plugin extensions. Refer to [Tiptap Custom Extensions](https://tiptap.dev/docs/editor/extensions/custom-extensions/create-new) for details. |
+| `uploaderHooks` | `Object` | `'uploaderHooks'` | A collection of hooks related to file uploading, allowing behaviors like validation, preprocessing, and custom upload logic.                |
 
-## uploaderHooks 参数说明
-| 参数名   | 类型     | 默认值   | 描述                       |
-|----------|----------|----------|----------------------------|
-| `action`  | `string` | `'null'`     | 上传文件的接口地址 |
-| `formDataHook`  | `Function(FormData, data)` | `-`     | 可自定义提交参数 |
-| `exceedSize`  | `Function(file)` | `-`     | 判断文件大小，返回true则继续上传，false拦截并停止上传 |
-| `filelink`  | `Function(res)` | `res.data.filelink、res.data.url、res.data.fileurl、res.data`     | 上传成功后返回访问文件的地址给filelink |
+## uploaderHooks 
+| Parameter      | Type                       | Default                                                                | Description                                                                |
+| -------------- | -------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `action`       | `string`                   | `null`                                                                 | The URL endpoint for file uploads.                                         |
+| `formDataHook` | `Function(FormData, data)` | `-`                                                                    | Allows customization of the upload request payload.                        |
+| `exceedSize`   | `Function(file)`           | `-`                                                                    | Function to check file size. Return `true` to proceed or `false` to block. |
+| `filelink`     | `Function(res)`            | `res.data.filelink`, `res.data.url`, `res.data.fileurl`, or `res.data` | Defines how to extract the file URL from the upload response.              |
 
 
 ## useEditors
@@ -83,6 +83,6 @@ const { charsWords } = useEditors();
 const editorCharsWords = computed(()=> charsWords());
 ```
 
-| 参数名   | 类型     | 默认值   | 描述                       |
-|----------|----------|----------|----------------------------|
-| `charsWords`  | `Function` | `-`     | 读取编辑器内的字符长度、单词长度 |
+| Parameter    | Type       | Default | Description                                                       |
+| ------------ | ---------- | ------- | ----------------------------------------------------------------- |
+| `charsWords` | `Function` | `-`     | Returns the number of characters and words in the editor content. |
