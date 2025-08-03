@@ -60,7 +60,7 @@ export function useEditor(options?: any, placeholder?: string) {
     onBeforeUnmount(() => {
         editor.value?.destroy();
         Vue3Editor.value?.destroy();
-        Vue3Editor.value = null;
+        Vue3Editor.value = undefined;
     });
 
     return {
